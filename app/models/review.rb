@@ -4,6 +4,6 @@ class Review < ApplicationRecord
   # A review must have content and a rating
   validates :content, presence: true
   # The rating should be a number between 0 and 5
-  validates :rating, inclusion: { in: [0, 1, 2, 3, 4, 5] }
+  validates :rating, inclusion: { in: (0..5) }
   validates :rating, numericality: { only_integer: true }
 end
